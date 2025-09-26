@@ -1,0 +1,39 @@
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.feature-icon {
+  font-size: 3rem;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: 600;
+  color: #ffd700 !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #6610f2;
+  box-shadow: 0 0 5px #6610f2;
+  outline: none;
+  transition: 0.3s;
+}
+
+footer {
+  background: linear-gradient(135deg, #6610f2, #007bff);
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #6610f2;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #520dc2;
+}
