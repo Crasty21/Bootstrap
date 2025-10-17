@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero-section {
-  height: 75vh; /* mniej wysoka niż 100vh */
+  height: 100vh;
   background: linear-gradient(135deg, #007bff, #6610f2);
   display: flex;
   justify-content: center;
@@ -9,36 +9,18 @@
   padding: 0 15px;
 }
 
-/* Ikony funkcji w kompaktowym stylu */
-.feature-icon-compact {
-  font-size: 2rem;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, background-color 0.3s;
-  cursor: default;
-}
-.feature-icon-compact i {
-  font-size: 2.5rem;
-  color: #6610f2;
-}
-.feature-icon-compact:hover {
-  transform: scale(1.1);
-  background-color: #f8f9fa;
-}
-.feature-icon-compact p {
-  margin-top: 10px;
-  font-weight: 500;
+/* Ikony funkcji */
+.feature-icon {
+  font-size: 3rem;
 }
 
-/* Navbar aktywny link */
+/* Aktywny link w navbar */
 .navbar-nav .nav-link.active {
   font-weight: 600;
   color: #ffd700 !important;
 }
 
-/* Input focus */
+/* Focus input/textarea */
 input:focus, textarea:focus {
   border-color: #6610f2;
   box-shadow: 0 0 5px #6610f2;
@@ -46,37 +28,122 @@ input:focus, textarea:focus {
   transition: 0.3s;
 }
 
-/* Footer */
+/* Footer gradient */
 footer {
   background: linear-gradient(135deg, #6610f2, #007bff);
   font-weight: 500;
 }
 
-/* Przyciski */
+/* Primary button styling */
 .btn-primary {
   background-color: #6610f2;
   border: none;
   transition: background-color 0.3s ease;
 }
+
 .btn-primary:hover {
   background-color: #520dc2;
 }
 
-/* Animacja przycisku "pulse" */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-.btn-light.pulse-hover:hover {
-  animation: pulse 0.6s ease-in-out;
+/* Karty funkcji - podświetlenie i animowane tło kwadratów */
+.feature-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Animacja obrazka "O nas" */
-.about-img {
-  transition: transform 0.3s ease;
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(102, 16, 242, 0.3);
+}
+
+/* Tło z animowanymi kwadratami */
+.card-bg-squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* Pojedyncze kwadraty w tle */
+.card-bg-squares::before,
+.card-bg-squares::after {
+  content: "";
+  position: absolute;
+  background: rgba(102, 16, 242, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  animation: floatSquares 6s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(102, 16, 242, 0.15);
+}
+
+.card-bg-squares::before {
+  top: 15px;
+  left: 15px;
+  animation-delay: 0s;
+}
+
+.card-bg-squares::after {
+  bottom: 15px;
+  right: 15px;
+  animation-delay: 3s;
+}
+
+@keyframes floatSquares {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+    opacity: 0.6;
+  }
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #6610f2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
   cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 12px rgba(102, 16, 242, 0.5);
+  transition: background-color 0.3s ease;
+  z-index: 9999;
 }
-.about-img:hover {
-  transform: scale(1.03);
+
+#scrollToTopBtn:hover {
+  background-color: #520dc2;
 }
+
+/* Opinie klientów */
+#testimonials {
+  background: #f8f9fa;
+}
+
+#testimonials p {
+  color: #555;
+  font-style: italic;
+}
+
+#testimonials h6 {
+  color: #6610f2;
+  font-weight: 600;
+}
+
