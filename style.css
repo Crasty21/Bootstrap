@@ -1,5 +1,6 @@
+/* Hero Section */
 .hero-section {
-  height: 100vh;
+  height: 75vh; /* mniej wysoka niż 100vh */
   background: linear-gradient(135deg, #007bff, #6610f2);
   display: flex;
   justify-content: center;
@@ -8,15 +9,36 @@
   padding: 0 15px;
 }
 
-.feature-icon {
-  font-size: 3rem;
+/* Ikony funkcji w kompaktowym stylu */
+.feature-icon-compact {
+  font-size: 2rem;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: default;
+}
+.feature-icon-compact i {
+  font-size: 2.5rem;
+  color: #6610f2;
+}
+.feature-icon-compact:hover {
+  transform: scale(1.1);
+  background-color: #f8f9fa;
+}
+.feature-icon-compact p {
+  margin-top: 10px;
+  font-weight: 500;
 }
 
+/* Navbar aktywny link */
 .navbar-nav .nav-link.active {
   font-weight: 600;
   color: #ffd700 !important;
 }
 
+/* Input focus */
 input:focus, textarea:focus {
   border-color: #6610f2;
   box-shadow: 0 0 5px #6610f2;
@@ -24,11 +46,13 @@ input:focus, textarea:focus {
   transition: 0.3s;
 }
 
+/* Footer */
 footer {
   background: linear-gradient(135deg, #6610f2, #007bff);
   font-weight: 500;
 }
 
+/* Przyciski */
 .btn-primary {
   background-color: #6610f2;
   border: none;
@@ -36,4 +60,23 @@ footer {
 }
 .btn-primary:hover {
   background-color: #520dc2;
+}
+
+/* Animacja przycisku "pulse" */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.btn-light.pulse-hover:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+/* Animacja obrazka "O nas" */
+.about-img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.about-img:hover {
+  transform: scale(1.03);
 }
