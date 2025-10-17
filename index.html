@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sklep z iPhone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">iPhoneShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Produkty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Najlepsze iPhone'y w jednym miejscu</h1>
+      <p class="lead">Sprawdź naszą ofertę i wybierz swój wymarzony model</p>
+      <a href="products.html" class="btn btn-primary btn-lg mt-3">Zobacz produkty</a>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Polecane iPhone'y</h2>
+      <div class="row g-4" id="product-list"></div>
+    </div>
+  </section>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Twój koszyk</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group mb-3" id="cart-items"></ul>
+      <h5>Łącznie: <span id="cart-total">0</span> PLN</h5>
+    </div>
+  </div>
+
+  <button class="btn btn-primary position-fixed" style="bottom:20px; right:20px; z-index:9999;" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">Koszyk 🛒</button>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p>&copy; 2025 iPhoneShop. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
